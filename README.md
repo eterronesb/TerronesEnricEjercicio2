@@ -1,0 +1,2 @@
+                                                              Ejercicio 2
+En este ejercicio le pediremos al usuario un caracter y unas dimensiones para crear un tablero de ajedrez. Para esto hay que tener en cuenta que utilizaremos una variable que coja solo el primer caracter, ya que asi por mucho que pongan palabras, cogeremos siempre el primer caracter. Tambien utilizaremos una variable para diferenciar entre par o impar para poder construir nuesto tablero.
