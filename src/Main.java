@@ -8,7 +8,7 @@ public class Main {
         System.out.print("Introduce el carácter de patrón para el tablero: ");
         char pattern = scanner.next().charAt(0);//Utilizamos charAt(0) para coger solo el primer caracter
 
-        int size;
+        int size;//Pedimos las dimensiones al usuario
         do {
             System.out.print("Introduce el tamaño de cada casilla (1-15): ");
             size = scanner.nextInt();
@@ -21,7 +21,7 @@ public class Main {
             for (int row = 0; row < size; row++) { // Tamaño de la casilla en filas
                 for (int j = 0; j < 8; j++) { // 8 columnas del tablero
                     for (int col = 0; col < size; col++) { // Tamaño de la casilla en columnas
-                        if ((i + j) % 2 == 0) {
+                        if ((i + j) % 2 == 0) {//realizamos esta formula para dividir entre pares o impares para que realice el dibujo
                             System.out.print(pattern);
                         } else {
                             System.out.print(" ");
