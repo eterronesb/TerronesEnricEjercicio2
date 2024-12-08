@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -33,6 +34,29 @@ public class Main {
                     System.out.println("Opcion no valida");
             }
         }
+    }
+    //mostrar menu opciones
+    private static void showMenu() {
+        System.out.println("[1] Añadir evento");
+        System.out.println("[2] Borrar evento");
+        System.out.println("[3] Listar eventos");
+        System.out.println("[4] Marcar/desmarcar tareas de un evento");
+        System.out.println("[5] Salir.");
+    }
+    //añadir evento
+    private static void addEvent(){
+        System.out.println("Titulo: ");
+        String title = scanner.nextLine();
+
+        System.out.println("Fecha (AAA-MM-DD): ");
+        LocalDate date = LocalDate.parse(scanner.nextLine());
+
+        System.out.println("Prioridad (HIGH, MEDIUM, LOW): ");
+        Event.Priority priority = Event.Priority.valueOf(scanner.nextLine().toUpperCase());
+        //utilizamos toUpperCase, para que se ponga en mayusculas
+
+        events.add(new Event(title, date, priority));
+        System.out.println("Evento añadido");
     }
 
 }
