@@ -10,7 +10,7 @@ public class Event {
 
     //enum para prioridades
     public enum Priority {
-        High, Medium, Low
+        HIGH, MEDIUM, LOW
     }
     //constructor
     public Event(String title, LocalDate date, Priority priority){
@@ -44,7 +44,7 @@ public class Event {
                 completedTasks++;
             }
         }
-        return "Titulo: "+ title + "\nFecha: " + date + "\nPrioridad: " + priority + "\nTareas completadas: " + completedTasks + "/" + tasks.size();
+        return "Titulo: "+ title + "\nFecha: " + date + "\nPrioridad: " + priority + "\nTareas completadas: " + completedTasks + "/" + tasks.size() + "\n";
     }
     //getter para el titulo
     public String getTitle() {

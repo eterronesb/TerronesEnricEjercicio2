@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -22,7 +21,7 @@ public class Main {
                     deleteEvent();
                     break;
                 case 3:
-                    listEvent();
+                    listEvents();
                     break;
                 case 4:
                     togleTaskCompletion();
@@ -83,6 +82,23 @@ public class Main {
             System.out.println(event);
         }
     }
+    //marcar/desmarcar
+    private static void togleTaskCompletion(){
+        System.out.println("Titulo del evento: ");
+        String title = scanner.nextLine();//pedimos al usuario el titulo del evento
+        for (Event event : events){
+            if (event.getTitle().equals(title)) { //lista las tareas
+                event.listTasks();
 
-
+                System.out.println("Numero de tareas: ");
+                int taskNumber = Integer.parseInt(scanner.nextLine()) - 1;
+                //marcar o desmarcar
+                event.getTask(taskNumber).toggleCompletion();
+                System.out.println("Tarea actualizada.");
+                return;
+            }
+        }
+        //si no encuentra el evento
+        System.out.println("Evento no encontrado.");
+    }
 }
