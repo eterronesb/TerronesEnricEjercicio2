@@ -13,12 +13,10 @@ public class EventTask {
         isCompleted = !isCompleted;
     }
     //estado de la tarea
-
     public boolean isCompleted() {
         return isCompleted;
     }
     //metodo toString para mostrar detalles de la tarea
-
     public String toString() {
         return (isCompleted ? "[Completada] " : "[Pendiente]") + text;
     }
