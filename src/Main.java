@@ -58,5 +58,31 @@ public class Main {
         events.add(new Event(title, date, priority));
         System.out.println("Evento añadido");
     }
+    //eliminar un evento
+    private static void deleteEvent() {
+        System.out.println("Titulo del evento a eliminar: ");
+        String title = scanner.nextLine();
+        //creamos un bucle para que recorra la lista en busca de un evento que coincida
+        for (int i= 0; i< events.size(); i++){
+            if (events.get(i).getTitle().equals(title)) {
+                events.remove(i);
+                System.out.println("Evento eliminado.");
+                return;//sale del metodo al finalizar tarea
+            }
+        }
+        //si no encuentra el evento
+        System.out.println("Evento no encontrado.");
+    }
+    //listar eventos
+    private static void listEvents() {
+        if (events.isEmpty()) {//Si no hay eventos
+            System.out.println("No hay eventos.");
+            return;
+        }
+        for (Event event : events) {//muestra cada evento
+            System.out.println(event);
+        }
+    }
+
 
 }
